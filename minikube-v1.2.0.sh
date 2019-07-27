@@ -1,6 +1,11 @@
 #!/bin/bash
 #minikube version: v1.2.0
-
+tee << EOF > /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://i5b0l4gz.mirror.aliyuncs.com"],
+  "dns": ["10.0.2.3","223.5.5.5"]
+}
+EOF
 #docker pull registry.cn-hangzhou.aliyuncs.com/dck8s/kube-proxy:v1.15.0
 #k8s.gcr.io/kube-proxy:v1.15.0
 
